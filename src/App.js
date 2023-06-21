@@ -1,13 +1,13 @@
 import React from 'react';
 // import ReactDOM from 'react-dom/client';
-import './index.css';
+import './styles/index.css';
 import Navbar from './Navbar';
 // import Footer from './Footer';
 // import reportWebVitals from './reportWebVitals';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
-import About from './About';
-import Home from './Home';
-import Contact from './Contact';
+import About from './pages/About';
+import Home from './pages/Home';
+import Contact from './pages/Contact';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
