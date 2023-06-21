@@ -1,13 +1,13 @@
 import React from 'react';
-// import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import Navbar from './Navbar';
-// import Footer from './Footer';
-// import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import About from './pages/About';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -24,6 +24,7 @@ function App() {
                     <Route exact path="/" Component={Home} />
                     <Route exact path="/about" Component={About} />
                     <Route exact path="/contact" Component={Contact} />
+                    <Route path="*" Component={NotFound} />
                 </Routes>
             </div>
         </Router>
