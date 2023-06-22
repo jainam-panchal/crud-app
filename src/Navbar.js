@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
     return (
-        <div>
+        <div className="mb-5">
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
                     <NavLink className="navbar-brand" to="/">Lorem Ipsum</NavLink>
