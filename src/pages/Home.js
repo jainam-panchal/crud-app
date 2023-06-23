@@ -14,7 +14,7 @@ const Home = () => {
     }
 
     return (
-        <div className="m-auto container p-3 mb-1 rounded">
+        <div className="m-auto container p-0 mb-1 rounded">
             <table class="table table-dark">
                 <thead className="table-dark">
                     <tr>
@@ -22,10 +22,10 @@ const Home = () => {
                         <th scope="col">Name</th>
                         <th scope="col">Username</th>
                         <th scope="col">Email</th>
-                        <th scope="col">City</th>
-                        <th scope="col">Zipcode</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Website</th>
                         <th scope="col"> Actions &nbsp; &nbsp;
-                            <button className="btn btn-success btn-sm">  Add New User</button>
+                            <button className="btn btn-success btn-sm"> Add New User</button>
                         </th>
                     </tr>
                 </thead>
@@ -37,8 +37,8 @@ const Home = () => {
                             <td>{user.name}</td>
                             <td>{user.username}</td>
                             <td>{user.email}</td>
-                            <td>{user.address.city}</td>
-                            <td>{user.address.zipcode}</td>
+                            <td>{user.phone}</td>
+                            <td>{user.website}</td>
                             <td>
                                 <button className="btn btn-light m-1">View</button>
                                 <button className="btn btn-primary m-1">Edit</button>
