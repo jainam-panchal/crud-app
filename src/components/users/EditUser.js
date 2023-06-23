@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import axios from 'axios'
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
 
-const AddUser = () => {
+const EditUser = () => {
   let history = useNavigate();
+  const { id } = useParams();
   const [user, setUser] = useState({
     name: "",
     username: "",
-    email: "",  
+    email: "",
     phone: "",
     website: ""
   });
@@ -17,31 +18,25 @@ const AddUser = () => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  // history.push is no more maintained and removed 
-  
-  // const onSubmit = async e => {
-  //   e.preventDefault();
-  //   await axios.post("http://localhost:3001/users", user);
-  //   history.push("/");
-  // };
+  useEffect(() => {
+    loadUser();
+  }, []);
 
-  const onSubmit = async (e, user, navigate) => {
+  const onSubmit = async e => {
     e.preventDefault();
-    await axios.post("http://localhost:3001/users", user);
-    navigate("/");
+    await axios.put(`http://localhost:3001/users/${id}`, user);
+    history.push("/");
   };
 
-  const navigate = useNavigate();
-
-  const handleSubmit = async (e) => {
-    await onSubmit(e, user, navigate);
+  const loadUser = async () => {
+    const result = await axios.get(`http://localhost:3001/users/${id}`);
+    setUser(result.data);
   };
-
   return (
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
-        <h2 className="text-center mb-4">Add New User</h2>
-        <form onSubmit={handleSubmit}>
+        <h2 className="text-center mb-4">Edit A User</h2>
+        <form onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <input
               type="text"
@@ -92,11 +87,11 @@ const AddUser = () => {
               onChange={e => onInputChange(e)}
             />
           </div>
-          <button className="btn btn-primary btn-block">Add User</button>
+          <button className="btn btn-warning btn-block">Update User</button>
         </form>
       </div>
     </div>
   );
 };
 
-export default AddUser;
+export default EditUser;

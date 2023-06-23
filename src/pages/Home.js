@@ -14,6 +14,11 @@ const Home = () => {
         setUsers(result.data);
     }
 
+    const deleteUser = async id => {
+        await axios.delete(`http://localhost:3001/users/${id}`);
+        loadUsers();
+    }
+    
     return (
         <div className="m-auto container p-0 mb-1 rounded">
             <table class="table table-dark">
@@ -41,9 +46,9 @@ const Home = () => {
                             <td>{user.phone}</td>
                             <td>{user.website}</td>
                             <td>
-                                <button className="btn btn-light m-1">View</button>
-                                <button className="btn btn-primary m-1">Edit</button>
-                                <button className="btn btn-danger m-1">Remove</button>
+                                <Link className="btn btn-light m-1" to={`/user/view/${user.id}`}>View</Link>
+                                <Link className="btn btn-primary m-1" to={`/user/edit/${user.id}`}>Edit</Link>
+                                <Link className="btn btn-danger m-1" onClick={ ()=> deleteUser(user.id) }>Remove</Link>
                             </td>
                         </tr>
                     ))}
