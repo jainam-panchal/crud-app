@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     const [users, setUsers] = useState([]);
@@ -25,7 +26,7 @@ const Home = () => {
                         <th scope="col">Phone</th>
                         <th scope="col">Website</th>
                         <th scope="col"> Actions &nbsp; &nbsp;
-                            <button className="btn btn-success btn-sm"> Add New User</button>
+                            <Link className="btn btn-success btn-sm" to="/user/add"> Add New User</Link>
                         </th>
                     </tr>
                 </thead>
