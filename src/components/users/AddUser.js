@@ -1,9 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState } from "react";
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 
 const AddUser = () => {
-  let history = useNavigate();
+  // let history = useNavigate();
   const [user, setUser] = useState({
     name: "",
     username: "",
@@ -18,7 +19,7 @@ const AddUser = () => {
   };
 
   // history.push is no more maintained and removed 
-  
+
   // const onSubmit = async e => {
   //   e.preventDefault();
   //   await axios.post("http://localhost:3001/users", user);
