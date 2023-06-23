@@ -1,8 +1,19 @@
-![Alt text](/public/images/Untitled.gif)
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# Screenshots
+![HomePage](/public/images/image-0.png)
+
+![EditPage](/public/images/image-10.png)
+
+![ViewPage](/public/images/image-11.png)
+
+![AboutPage](/public/images/image-12.png)
+
+![ContactPage](/public/images/image-13.png)
+
+![ErrorPage](/public/images/image-14.png)
 
 ## Available Scripts
 
@@ -37,12 +48,3 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run eject`
-
-# Screenshots
-![HomePage](/public/images/image-0.png)
-
-![AboutPage](/public/images/image.png)
-
-![ContactPage](/public/images/image-1.png)
-
-![ErrorPage](/public/images/image-2.png)
